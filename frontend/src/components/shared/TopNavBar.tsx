@@ -139,7 +139,7 @@ export function TopNavBar() {
                     transition={{ delay: 0.1 }}
                   >
                     <Link 
-                      className={`block text-display-lg-mobile font-display-lg tracking-tight transition-colors duration-300 ${
+                      className={`block text-headline-md font-headline-md tracking-tight transition-colors duration-300 ${
                         isActive ? "text-primary font-medium" : "text-on-surface-variant hover:text-primary"
                       }`}
                       href={link.href}

@@ -34,7 +34,7 @@ export function BlogSection() {
           </div>
           <div className="p-8 text-center flex flex-col items-center">
             <h3 className="text-headline-sm font-headline-sm text-primary font-bold mb-2">Best Way to find best Furniture</h3>
-            <p className="text-label-sm font-label-sm text-outline mb-4">Admin April 9, 2023</p>
+            <p className="text-label-sm font-label-sm text-outline mb-4">Admin April 9, 2026</p>
             <p className="text-body-md font-body-md text-on-surface-variant mb-6 line-clamp-3">Lorem ipsum dolor sit amet consectetur. Enim a diam urna sed. Leo in habitasse purus sed feugiat bibendum lacus odio diam. Tellus fermentum id ut vitae amet.</p>
             <button className="bg-tertiary text-on-tertiary rounded-full px-8 py-2 text-label-sm font-label-sm hover:opacity-90 transition-opacity">Read More</button>
           </div>
@@ -47,7 +47,7 @@ export function BlogSection() {
           </div>
           <div className="p-8 text-center flex flex-col items-center">
             <h3 className="text-headline-sm font-headline-sm text-primary font-bold mb-2">Best Way to find best Furniture</h3>
-            <p className="text-label-sm font-label-sm text-outline mb-4">Admin April 9, 2023</p>
+            <p className="text-label-sm font-label-sm text-outline mb-4">Admin April 9, 2026</p>
             <p className="text-body-md font-body-md text-on-surface-variant mb-6 line-clamp-3">Lorem ipsum dolor sit amet consectetur. Enim a diam urna sed. Leo in habitasse purus sed feugiat bibendum lacus odio diam. Tellus fermentum id ut vitae amet.</p>
             <button className="bg-tertiary text-on-tertiary rounded-full px-8 py-2 text-label-sm font-label-sm hover:opacity-90 transition-opacity">Read More</button>
           </div>

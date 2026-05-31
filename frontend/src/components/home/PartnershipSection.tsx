@@ -15,43 +15,37 @@ export function PartnershipSection() {
   };
 
   const logos = [
-    { name: "Herman Miller", src: "https://cdn.worldvectorlogo.com/logos/herman-miller.svg" },
-    { name: "IKEA", src: "https://cdn.worldvectorlogo.com/logos/ikea-logo.svg" },
-    { name: "BoConcept", src: "https://cdn.worldvectorlogo.com/logos/boconcept.svg" },
-    { name: "Kartell", src: "https://cdn.worldvectorlogo.com/logos/kartell.svg" },
-    { name: "Knoll", src: "https://cdn.worldvectorlogo.com/logos/knoll.svg" },
-    { name: "Vitra", src: "https://cdn.worldvectorlogo.com/logos/vitra.svg" }
+    { name: "Herman Miller", src: "/logos/herman-miller.svg" },
+    { name: "IKEA", src: "/logos/ikea.svg" },
+    { name: "Kartell", src: "/logos/kartell.svg" },
+    { name: "Knoll", src: "/logos/knoll.svg" },
+    { name: "Vitra", src: "/logos/vitra.svg" }
   ];
 
   // Duplicate for seamless marquee effect
-  const marqueeLogos = [...logos, ...logos, ...logos];
+  const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
 
   return (
-    <section className="w-full py-20 bg-surface border-y border-surface-container-high overflow-hidden">
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center mb-10">
-        <h2 className="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">
+    <section className="w-full py-16 border-y border-surface-container-high bg-surface-container-lowest overflow-hidden">
+      <div className="text-center mb-8">
+        <span className="text-label-caps text-on-surface-variant uppercase tracking-widest">
           Trusted by the World's Finest Brands
-        </h2>
+        </span>
       </div>
-
-      <div className="relative w-full flex overflow-hidden group">
-        <motion.div 
-          className="flex gap-16 md:gap-32 items-center w-max pl-16 md:pl-32"
-          animate={{ x: ["0%", "-33.333%"] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      <div className="relative flex w-full">
+        <motion.div
+          className="flex whitespace-nowrap"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ ease: "linear", duration: 30, repeat: Infinity }}
         >
           {marqueeLogos.map((brand, index) => (
-            <Link
-              key={index}
-              href={`/products?brand=${encodeURIComponent(brand.name)}`}
-              className="w-24 md:w-32 h-12 md:h-16 flex items-center justify-center shrink-0 cursor-pointer"
-            >
+            <div key={index} className="flex-none w-48 md:w-64 mx-8 h-12 relative flex items-center justify-center">
               <img 
                 src={brand.src} 
                 alt={brand.name} 
-                className="w-full h-full object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                className="w-full h-full object-contain"
               />
-            </Link>
+            </div>
           ))}
         </motion.div>
       </div>

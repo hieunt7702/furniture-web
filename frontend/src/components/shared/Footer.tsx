@@ -7,9 +7,9 @@ export function Footer() {
         {/* Brand Column */}
         <div className="flex flex-col gap-4">
           <h3 className="text-headline-sm font-headline-sm font-bold text-on-tertiary tracking-tight">LUXURY</h3>
-          <p className="text-body-md font-body-md text-on-tertiary-container">12 Main St, London</p>
-          <p className="text-body-md font-body-md text-on-tertiary-container">+44 3656 4567</p>
-          <p className="text-body-md font-body-md text-on-tertiary-container">contact@luxurytheme.com</p>
+          <p className="text-body-md font-body-md text-on-tertiary-container">Hà Nội Việt Nam</p>
+          <p className="text-body-md font-body-md text-on-tertiary-container">0334689521</p>
+          <p className="text-body-md font-body-md text-on-tertiary-container">hieunt270702@gmail.com</p>
         </div>
         
         {/* Links 1 */}
@@ -40,7 +40,7 @@ export function Footer() {
         </div>
       </div>
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter mt-16 pt-8 border-t border-outline/20 text-center">
-        <p className="text-label-sm font-label-sm text-on-tertiary-container">©2023 Cozy All Rights Reserved</p>
+        <p className="text-label-sm font-label-sm text-on-tertiary-container">©2026 Cozy All Rights Reserved</p>
       </div>
     </footer>
   );
