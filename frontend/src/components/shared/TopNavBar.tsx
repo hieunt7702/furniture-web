@@ -121,38 +121,44 @@ export function TopNavBar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-md pt-24 px-6 flex flex-col md:hidden"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-surface/98 backdrop-blur-xl pt-28 px-8 flex flex-col md:hidden"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
           >
-            <ul className="flex flex-col gap-6 items-center w-full">
+            <ul className="flex flex-col gap-8 items-start w-full">
               {navLinks.map((link) => {
                 const isActive = checkIsActive(link.href);
                 return (
-                  <li key={link.name} className="w-full text-center">
+                  <motion.li 
+                    key={link.name} 
+                    className="w-full"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 }}
+                  >
                     <Link 
-                      className={`block py-2 text-headline-sm font-headline-sm transition-colors duration-200 ${
-                        isActive ? "text-primary font-bold" : "text-on-surface-variant hover:text-primary"
+                      className={`block text-display-lg-mobile font-display-lg tracking-tight transition-colors duration-300 ${
+                        isActive ? "text-primary font-medium" : "text-on-surface-variant hover:text-primary"
                       }`}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {link.name}
                     </Link>
-                  </li>
+                  </motion.li>
                 );
               })}
             </ul>
-            <div className="flex justify-center gap-8 mt-12 w-full pt-8 border-t border-surface-container">
-              <button className="text-on-surface-variant hover:text-primary flex flex-col items-center gap-2">
-                <Search size={24} strokeWidth={1.5} />
-                <span className="text-label-sm">Search</span>
+            <div className="flex justify-start gap-8 mt-auto mb-12 w-full pt-8 border-t border-surface-container-high">
+              <button className="text-on-surface-variant hover:text-primary flex flex-col items-start gap-2 transition-colors">
+                <Search size={28} strokeWidth={1} />
+                <span className="text-label-caps uppercase tracking-widest">Search</span>
               </button>
-              <button className="text-on-surface-variant hover:text-primary flex flex-col items-center gap-2">
-                <User size={24} strokeWidth={1.5} />
-                <span className="text-label-sm">Profile</span>
+              <button className="text-on-surface-variant hover:text-primary flex flex-col items-start gap-2 transition-colors">
+                <User size={28} strokeWidth={1} />
+                <span className="text-label-caps uppercase tracking-widest">Profile</span>
               </button>
             </div>
           </motion.div>

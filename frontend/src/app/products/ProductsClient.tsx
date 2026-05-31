@@ -85,14 +85,13 @@ export function ProductsClient({ initialBrand }: { initialBrand: string }) {
       </motion.div>
 
       {/* Product Grid */}
-      <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-stack-lg">
-        <AnimatePresence mode="popLayout">
+      <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-stack-lg">
+        <AnimatePresence mode="wait">
           {filteredProducts.map((product) => (
             <motion.div
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.4 }}
               key={product.slug}
               className="group cursor-pointer"

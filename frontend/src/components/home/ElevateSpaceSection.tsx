@@ -26,7 +26,7 @@ export function ElevateSpaceSection() {
           className="bg-surface/90 backdrop-blur-md p-10 md:p-16 max-w-2xl text-center rounded-sm shadow-2xl border border-white/10"
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest block mb-4">

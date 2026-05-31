@@ -15,12 +15,12 @@ export function PartnershipSection() {
   };
 
   const logos = [
-    { name: "Herman Miller", src: "https://logo.clearbit.com/hermanmiller.com" },
-    { name: "IKEA", src: "https://logo.clearbit.com/ikea.com" },
-    { name: "BoConcept", src: "https://logo.clearbit.com/boconcept.com" },
-    { name: "Kartell", src: "https://logo.clearbit.com/kartell.com" },
-    { name: "Knoll", src: "https://logo.clearbit.com/knoll.com" },
-    { name: "Vitra", src: "https://logo.clearbit.com/vitra.com" }
+    { name: "Herman Miller", src: "https://cdn.worldvectorlogo.com/logos/herman-miller.svg" },
+    { name: "IKEA", src: "https://cdn.worldvectorlogo.com/logos/ikea-logo.svg" },
+    { name: "BoConcept", src: "https://cdn.worldvectorlogo.com/logos/boconcept.svg" },
+    { name: "Kartell", src: "https://cdn.worldvectorlogo.com/logos/kartell.svg" },
+    { name: "Knoll", src: "https://cdn.worldvectorlogo.com/logos/knoll.svg" },
+    { name: "Vitra", src: "https://cdn.worldvectorlogo.com/logos/vitra.svg" }
   ];
 
   // Duplicate for seamless marquee effect

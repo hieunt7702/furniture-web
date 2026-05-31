@@ -19,7 +19,7 @@ export function AboutSection() {
         className="lg:col-span-5 flex flex-col items-start gap-8"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
         variants={{
           hidden: { opacity: 0 },
           visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
@@ -54,7 +54,7 @@ export function AboutSection() {
         className="lg:col-span-7 relative h-[600px] md:h-[800px] w-full"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.1 }}
         variants={imageVariants}
       >
         <img 
