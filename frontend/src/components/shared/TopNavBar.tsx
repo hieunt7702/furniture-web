@@ -36,14 +36,14 @@ export function TopNavBar() {
   return (
     <>
       <motion.header 
-        className={`w-full z-50 fixed top-0 transition-all duration-300 ${
-          isScrolled ? "bg-surface/95 backdrop-blur-md shadow-sm py-2 border-b border-surface-container" : "bg-transparent py-4 border-b border-transparent"
+        className={`w-full z-50 sticky top-0 transition-all duration-300 ${
+          isScrolled ? "bg-surface/95 backdrop-blur-md shadow-sm border-b border-surface-container" : "bg-background border-b border-surface-container"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
           {/* Brand */}
           <Link className="text-title-lg font-title-lg font-bold text-primary tracking-tight" href="/">LUXURY</Link>
           

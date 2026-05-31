@@ -55,7 +55,7 @@ export function CategorySection() {
         </motion.p>
       </div>
 
-      <motion.div variants={itemVariants} className="flex justify-center gap-4 mb-12">
+      <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-12">
         <button className="bg-tertiary text-on-tertiary rounded-full px-6 py-2 text-label-sm font-label-sm">All</button>
         <button className="bg-transparent text-primary border border-outline-variant rounded-full px-6 py-2 text-label-sm font-label-sm hover:border-primary transition-colors">Chair</button>
         <button className="bg-transparent text-primary border border-outline-variant rounded-full px-6 py-2 text-label-sm font-label-sm hover:border-primary transition-colors">Table</button>

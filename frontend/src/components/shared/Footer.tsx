@@ -6,10 +6,10 @@ export function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-stack-lg w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto">
         {/* Brand Column */}
         <div className="flex flex-col gap-4">
-          <h3 className="text-headline-sm font-headline-sm font-bold text-on-tertiary">Cozy</h3>
+          <h3 className="text-headline-sm font-headline-sm font-bold text-on-tertiary tracking-tight">LUXURY</h3>
           <p className="text-body-md font-body-md text-on-tertiary-container">12 Main St, London</p>
           <p className="text-body-md font-body-md text-on-tertiary-container">+44 3656 4567</p>
-          <p className="text-body-md font-body-md text-on-tertiary-container">contact@cozytheme.com</p>
+          <p className="text-body-md font-body-md text-on-tertiary-container">contact@luxurytheme.com</p>
         </div>
         
         {/* Links 1 */}
