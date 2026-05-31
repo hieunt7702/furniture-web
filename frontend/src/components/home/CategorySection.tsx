@@ -36,7 +36,7 @@ export function CategorySection() {
       name: "Mah Jong Sofa",
       brand: "ROCHE BOBOIS",
       price: "$15,500",
-      image: "https://images.unsplash.com/photo-1540574163026-643ea20d592e?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80",
     }
   ];
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
 
 export function TopNavBar() {
   const { scrollY } = useScroll();
@@ -11,25 +12,25 @@ export function TopNavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 20);
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
-    { name: "Categories", href: "/#categories" },
-    { name: "About us", href: "/#about" },
-    { name: "Blog", href: "/#blog" },
+    { name: "Categories", href: "#" },
+    { name: "About Us", href: "#" },
+    { name: "Contact", href: "#" },
   ];
 
   const checkIsActive = (href: string) => {
-    if (href === "/") {
-      return pathname === "/";
-    }
-    if (href.startsWith("/#")) {
-      return false; // Anchor links don't get active highlighting via pathname
-    }
+    if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
   };
 
@@ -45,7 +46,7 @@ export function TopNavBar() {
       <motion.header 
         className={`w-full z-50 fixed top-0 transition-all duration-300 ${
           isScrolled 
-            ? "bg-surface/95 backdrop-blur-md shadow-sm py-2 border-b border-surface-container" 
+            ? "bg-surface/95 backdrop-blur-md shadow-sm py-4 border-b border-surface-container" 
             : isHome 
               ? "bg-transparent py-6 border-b border-transparent" 
               : "bg-surface py-4 border-b border-surface-container"
@@ -54,7 +55,7 @@ export function TopNavBar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-12">
           {/* Brand */}
           <Link className={`text-title-lg font-title-lg font-bold tracking-tight transition-colors duration-300 ${textColorClass}`} href="/">LUXURY</Link>
           
@@ -86,21 +87,21 @@ export function TopNavBar() {
               whileTap={{ scale: 0.9 }}
               className={`transition-colors duration-200 hidden sm:block ${textVariantClass} ${hoverColorClass}`}
             >
-              <span className="material-symbols-outlined" data-icon="search">search</span>
+              <Search size={22} strokeWidth={1.5} />
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className={`transition-colors duration-200 ${textVariantClass} ${hoverColorClass}`}
             >
-              <span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+              <ShoppingCart size={22} strokeWidth={1.5} />
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className={`transition-colors duration-200 hidden sm:block ${textVariantClass} ${hoverColorClass}`}
             >
-              <span className="material-symbols-outlined" data-icon="person">person</span>
+              <User size={22} strokeWidth={1.5} />
             </motion.button>
             
             {/* Mobile Menu Toggle */}
@@ -110,9 +111,7 @@ export function TopNavBar() {
               className={`md:hidden transition-colors ml-2 flex items-center ${textVariantClass} ${hoverColorClass}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              <span className="material-symbols-outlined text-title-md">
-                {isMobileMenuOpen ? "close" : "menu"}
-              </span>
+              {isMobileMenuOpen ? <X size={26} strokeWidth={1.5} /> : <Menu size={26} strokeWidth={1.5} />}
             </motion.button>
           </div>
         </nav>
@@ -121,24 +120,22 @@ export function TopNavBar() {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: "-100%" }}
+          <motion.div 
+            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-md pt-24 px-6 flex flex-col md:hidden"
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-surface/95 backdrop-blur-md pt-24 px-margin-mobile flex flex-col md:hidden border-b border-outline-variant/30 shadow-lg h-fit pb-8"
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
           >
-            <ul className="flex flex-col gap-6 text-center">
+            <ul className="flex flex-col gap-6 items-center w-full">
               {navLinks.map((link) => {
                 const isActive = checkIsActive(link.href);
                 return (
-                  <li key={link.name}>
+                  <li key={link.name} className="w-full text-center">
                     <Link 
-                      className={`text-headline-sm font-headline-sm transition-colors duration-200 block w-full py-2 ${
-                        isActive
-                          ? "text-primary font-bold bg-surface-container-low rounded-lg" 
-                          : "text-on-surface-variant"
-                      }`} 
+                      className={`block py-2 text-headline-sm font-headline-sm transition-colors duration-200 ${
+                        isActive ? "text-primary font-bold" : "text-on-surface-variant hover:text-primary"
+                      }`}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
@@ -148,6 +145,16 @@ export function TopNavBar() {
                 );
               })}
             </ul>
+            <div className="flex justify-center gap-8 mt-12 w-full pt-8 border-t border-surface-container">
+              <button className="text-on-surface-variant hover:text-primary flex flex-col items-center gap-2">
+                <Search size={24} strokeWidth={1.5} />
+                <span className="text-label-sm">Search</span>
+              </button>
+              <button className="text-on-surface-variant hover:text-primary flex flex-col items-center gap-2">
+                <User size={24} strokeWidth={1.5} />
+                <span className="text-label-sm">Profile</span>
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -15,12 +15,12 @@ export function PartnershipSection() {
   };
 
   const logos = [
-    { name: "Herman Miller", src: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Herman_Miller_logo.svg" },
-    { name: "IKEA", src: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Ikea_logo.svg" },
-    { name: "BoConcept", src: "https://upload.wikimedia.org/wikipedia/commons/9/90/BoConcept_logo.svg" },
-    { name: "Kartell", src: "https://upload.wikimedia.org/wikipedia/commons/3/35/Kartell_logo.svg" },
-    { name: "Knoll", src: "https://upload.wikimedia.org/wikipedia/commons/1/14/Knoll_logo.svg" },
-    { name: "Vitra", src: "https://upload.wikimedia.org/wikipedia/commons/8/87/Vitra_logo.svg" }
+    { name: "Herman Miller", src: "https://logo.clearbit.com/hermanmiller.com" },
+    { name: "IKEA", src: "https://logo.clearbit.com/ikea.com" },
+    { name: "BoConcept", src: "https://logo.clearbit.com/boconcept.com" },
+    { name: "Kartell", src: "https://logo.clearbit.com/kartell.com" },
+    { name: "Knoll", src: "https://logo.clearbit.com/knoll.com" },
+    { name: "Vitra", src: "https://logo.clearbit.com/vitra.com" }
   ];
 
   // Duplicate for seamless marquee effect

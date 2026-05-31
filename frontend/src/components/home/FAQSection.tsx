@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Plus, Minus } from "lucide-react";
 
 export function FAQSection() {
   const containerVariants: import("framer-motion").Variants = {
@@ -29,20 +30,20 @@ export function FAQSection() {
       <div className="space-y-4">
         <motion.div variants={itemVariants} className="border border-outline-variant/50 rounded-lg p-4 bg-surface-container-lowest flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors">
           <span className="text-body-md font-body-md text-primary font-medium">What services do you offer?</span>
-          <span className="material-symbols-outlined text-outline">add</span>
+          <Plus size={24} className="text-outline" />
         </motion.div>
         <motion.div variants={itemVariants} className="border border-outline-variant/50 rounded-lg p-4 bg-surface-container-lowest flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors">
           <span className="text-body-md font-body-md text-primary font-medium">How does the design process work?</span>
-          <span className="material-symbols-outlined text-outline">add</span>
+          <Plus size={24} className="text-outline" />
         </motion.div>
         <motion.div variants={itemVariants} className="border border-outline-variant/50 rounded-lg p-4 bg-surface-container-lowest flex justify-between items-center cursor-pointer hover:bg-surface-container-low transition-colors">
           <span className="text-body-md font-body-md text-primary font-medium">What is your design style?</span>
-          <span className="material-symbols-outlined text-outline">add</span>
+          <Plus size={24} className="text-outline" />
         </motion.div>
         <motion.div variants={itemVariants} className="border border-outline-variant/50 rounded-lg p-4 bg-surface-container-lowest">
           <div className="flex justify-between items-center cursor-pointer mb-2">
             <span className="text-body-md font-body-md text-primary font-medium">Do you work with a specific budget range?</span>
-            <span className="material-symbols-outlined text-outline">remove</span>
+            <Minus size={24} className="text-outline" />
           </div>
           <motion.p 
             initial={{ height: 0, opacity: 0 }}

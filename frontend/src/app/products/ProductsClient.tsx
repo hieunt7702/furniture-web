@@ -9,7 +9,7 @@ const ALL_PRODUCTS = [
   { slug: "minotti-freeman-sofa", name: "Freeman Seating System", brand: "MINOTTI", price: "$8,500", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80" },
   { slug: "poliform-mondrian-sofa", name: "Mondrian Sofa", brand: "POLIFORM", price: "$9,200", image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" },
   { slug: "bb-italia-camaleonda", name: "Camaleonda Modular Sofa", brand: "B&B ITALIA", price: "$12,000", image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=800&q=80" },
-  { slug: "roche-bobois-mah-jong", name: "Mah Jong Sofa", brand: "ROCHE BOBOIS", price: "$15,500", image: "https://images.unsplash.com/photo-1540574163026-643ea20d592e?auto=format&fit=crop&w=800&q=80" },
+  { slug: "roche-bobois-mah-jong", name: "Mah Jong Sofa", brand: "ROCHE BOBOIS", price: "$15,500", image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80" },
   { slug: "boconcept-osaka", name: "Osaka Sofa", brand: "BOCONCEPT", price: "$3,400", image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" },
   { slug: "kartell-lou-ghost", name: "Lou Ghost Chair", brand: "KARTELL", price: "$450", image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80" },
   { slug: "minotti-torii-chair", name: "Torii Armchair", brand: "MINOTTI", price: "$2,800", image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80" },

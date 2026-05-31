@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Heart } from "lucide-react";
 
 interface Product {
   slug: string;
@@ -69,8 +70,8 @@ export function ProductDetailClient({ product }: { product: Product }) {
             <button className="flex-1 bg-tertiary text-on-tertiary py-4 rounded-full text-label-sm font-label-sm hover:opacity-90 transition-opacity">
               Add to Cart
             </button>
-            <button className="w-14 h-14 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors">
-              <span className="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
+            <button className="flex items-center justify-center p-4 border border-outline-variant rounded-full text-on-surface-variant hover:text-primary hover:border-primary transition-colors">
+              <Heart size={24} strokeWidth={1.5} />
             </button>
           </div>
 
