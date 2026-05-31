@@ -23,7 +23,7 @@ export function PartnershipSection() {
   ];
 
   // Duplicate for seamless marquee effect
-  const marqueeLogos = [...logos, ...logos, ...logos, ...logos];
+  const marqueeLogos = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
 
   return (
     <section className="w-full py-16 border-y border-surface-container-high bg-surface-container-lowest overflow-hidden">
@@ -34,16 +34,16 @@ export function PartnershipSection() {
       </div>
       <div className="relative flex w-full">
         <motion.div
-          className="flex whitespace-nowrap"
+          className="flex whitespace-nowrap items-center"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+          transition={{ ease: "linear", duration: 40, repeat: Infinity }}
         >
           {marqueeLogos.map((brand, index) => (
-            <div key={index} className="flex-none w-48 md:w-64 mx-8 h-12 relative flex items-center justify-center">
+            <div key={index} className="flex-none w-32 md:w-40 mx-4 md:mx-6 h-10 md:h-12 relative flex items-center justify-center group cursor-pointer">
               <img 
                 src={brand.src} 
                 alt={brand.name} 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </div>
           ))}
