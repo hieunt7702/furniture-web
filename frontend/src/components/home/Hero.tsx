@@ -28,7 +28,7 @@ export function Hero() {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <img 
-          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=100" 
+          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=3840&q=100" 
           alt="Luxury Interior" 
           className="w-full h-full object-cover object-center brightness-75"
         />
