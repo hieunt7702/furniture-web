@@ -98,19 +98,19 @@ export function ProductsClient({ initialBrand }: { initialBrand: string }) {
               className="group cursor-pointer"
             >
               <Link href={`/products/${product.slug}`}>
-                <div className="bg-surface-container-low rounded-2xl overflow-hidden aspect-[4/5] relative mb-4">
+                <div className="bg-surface-container-lowest rounded-sm overflow-hidden aspect-[4/5] relative mb-4">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold text-primary">
+                  <div className="absolute top-4 left-4 bg-surface/80 px-3 py-1 text-[10px] uppercase tracking-widest font-bold text-on-surface backdrop-blur-sm">
                     {product.brand}
                   </div>
                 </div>
-                <div>
-                  <h3 className="text-body-lg font-body-lg text-primary font-medium">{product.name}</h3>
-                  <p className="text-label-sm font-label-sm text-on-surface-variant mt-1">{product.price}</p>
+                <div className="flex flex-col">
+                  <h3 className="text-body-lg font-headline-sm text-primary group-hover:text-tertiary transition-colors">{product.name}</h3>
+                  <p className="text-body-md font-body-md text-on-surface-variant mt-1">{product.price}</p>
                 </div>
               </Link>
             </motion.div>

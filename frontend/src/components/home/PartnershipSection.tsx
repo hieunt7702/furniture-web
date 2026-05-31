@@ -23,37 +23,38 @@ export function PartnershipSection() {
     { name: "Vitra", src: "https://upload.wikimedia.org/wikipedia/commons/8/87/Vitra_logo.svg" }
   ];
 
-  return (
-    <motion.section
-      className="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-gap text-center"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={containerVariants}
-    >
-      <motion.h2 variants={logoVariants} className="text-headline-sm font-headline-sm text-primary mb-2 font-bold">Our Affiliated Brands</motion.h2>
-      <motion.p variants={logoVariants} className="text-body-md font-body-md text-on-surface-variant mb-12">Discover collections from the world's most prestigious furniture makers.</motion.p>
+  // Duplicate for seamless marquee effect
+  const marqueeLogos = [...logos, ...logos, ...logos];
 
-      <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-        {logos.map((brand, index) => (
-          <motion.div
-            key={index}
-            variants={logoVariants}
-            whileHover={{ scale: 1.05, borderColor: "rgba(116, 120, 120, 0.6)" }}
-          >
+  return (
+    <section className="w-full py-20 bg-surface border-y border-surface-container-high overflow-hidden">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center mb-10">
+        <h2 className="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-widest">
+          Trusted by the World's Finest Brands
+        </h2>
+      </div>
+
+      <div className="relative w-full flex overflow-hidden group">
+        <motion.div 
+          className="flex gap-16 md:gap-32 items-center w-max pl-16 md:pl-32"
+          animate={{ x: ["0%", "-33.333%"] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        >
+          {marqueeLogos.map((brand, index) => (
             <Link
+              key={index}
               href={`/products?brand=${encodeURIComponent(brand.name)}`}
-              className="bg-surface-container-lowest rounded-xl px-4 md:px-8 w-28 md:w-48 h-16 md:h-24 flex items-center justify-center border border-outline-variant/30 shadow-sm transition-colors cursor-pointer group"
+              className="w-24 md:w-32 h-12 md:h-16 flex items-center justify-center shrink-0 cursor-pointer"
             >
               <img 
                 src={brand.src} 
                 alt={brand.name} 
-                className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                className="w-full h-full object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
               />
             </Link>
-          </motion.div>
-        ))}
+          ))}
+        </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 }

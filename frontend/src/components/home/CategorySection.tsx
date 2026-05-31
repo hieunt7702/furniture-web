@@ -62,23 +62,26 @@ export function CategorySection() {
         <button className="bg-transparent text-primary border border-outline-variant rounded-full px-6 py-2 text-label-sm font-label-sm hover:border-primary transition-colors">Lamp</button>
       </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-stack-md">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
         {products.map((product, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
-            whileHover={{ y: -10 }}
-            className="bg-surface-container-lowest rounded-xl overflow-hidden group cursor-pointer border border-outline-variant/30 shadow-sm hover:shadow-lg transition-all"
+            className="group cursor-pointer flex flex-col gap-4"
           >
-            <div className="h-64 overflow-hidden relative">
-              <img alt={product.name} className="object-cover h-full w-full group-hover:scale-105 transition-transform duration-500" src={product.image} />
-              <div className="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold text-primary">
+            <div className="h-[400px] overflow-hidden relative rounded-sm bg-surface-container-lowest">
+              <img 
+                alt={product.name} 
+                className="object-cover h-full w-full group-hover:scale-105 transition-transform duration-700 ease-out" 
+                src={product.image} 
+              />
+              <div className="absolute top-4 left-4 text-[10px] uppercase tracking-widest font-bold text-on-surface bg-surface/80 px-3 py-1 backdrop-blur-sm">
                 {product.brand}
               </div>
             </div>
-            <div className="p-6 text-center">
-              <h4 className="text-body-lg font-body-lg text-primary font-medium">{product.name}</h4>
-              <p className="text-label-sm font-label-sm text-on-surface-variant mt-2">{product.price}</p>
+            <div className="flex flex-col">
+              <h4 className="text-body-lg font-headline-sm text-primary group-hover:text-tertiary transition-colors">{product.name}</h4>
+              <p className="text-body-md font-body-md text-on-surface-variant mt-1">{product.price}</p>
             </div>
           </motion.div>
         ))}

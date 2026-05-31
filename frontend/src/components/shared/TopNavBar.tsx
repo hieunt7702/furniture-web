@@ -33,19 +33,30 @@ export function TopNavBar() {
     return pathname.startsWith(href);
   };
 
+  const isHome = pathname === "/";
+  const isTransparent = isHome && !isScrolled && !isMobileMenuOpen;
+
+  const textColorClass = isTransparent ? "text-surface" : "text-primary";
+  const textVariantClass = isTransparent ? "text-surface-container" : "text-on-surface-variant";
+  const hoverColorClass = isTransparent ? "hover:text-surface" : "hover:text-primary";
+
   return (
     <>
       <motion.header 
-        className={`w-full z-50 sticky top-0 transition-all duration-300 ${
-          isScrolled ? "bg-surface/95 backdrop-blur-md shadow-sm border-b border-surface-container" : "bg-background border-b border-surface-container"
+        className={`w-full z-50 fixed top-0 transition-all duration-300 ${
+          isScrolled 
+            ? "bg-surface/95 backdrop-blur-md shadow-sm py-2 border-b border-surface-container" 
+            : isHome 
+              ? "bg-transparent py-6 border-b border-transparent" 
+              : "bg-surface py-4 border-b border-surface-container"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+        <nav className="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto">
           {/* Brand */}
-          <Link className="text-title-lg font-title-lg font-bold text-primary tracking-tight" href="/">LUXURY</Link>
+          <Link className={`text-title-lg font-title-lg font-bold tracking-tight transition-colors duration-300 ${textColorClass}`} href="/">LUXURY</Link>
           
           {/* Links (Desktop) */}
           <ul className="hidden md:flex gap-8 items-center">
@@ -56,8 +67,8 @@ export function TopNavBar() {
                   <Link 
                     className={`pb-1 text-label-sm font-label-sm transition-colors duration-200 ${
                       isActive 
-                        ? "text-primary font-bold border-b-2 border-primary" 
-                        : "text-on-surface-variant hover:text-primary"
+                        ? `${textColorClass} font-bold border-b-2 ${isTransparent ? 'border-surface' : 'border-primary'}` 
+                        : `${textVariantClass} ${hoverColorClass}`
                     }`} 
                     href={link.href}
                   >
@@ -73,21 +84,21 @@ export function TopNavBar() {
             <motion.button 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="hover:text-primary transition-colors duration-200 text-on-surface-variant hidden sm:block"
+              className={`transition-colors duration-200 hidden sm:block ${textVariantClass} ${hoverColorClass}`}
             >
               <span className="material-symbols-outlined" data-icon="search">search</span>
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="hover:text-primary transition-colors duration-200 text-on-surface-variant"
+              className={`transition-colors duration-200 ${textVariantClass} ${hoverColorClass}`}
             >
               <span className="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="hover:text-primary transition-colors duration-200 text-on-surface-variant hidden sm:block"
+              className={`transition-colors duration-200 hidden sm:block ${textVariantClass} ${hoverColorClass}`}
             >
               <span className="material-symbols-outlined" data-icon="person">person</span>
             </motion.button>
@@ -96,7 +107,7 @@ export function TopNavBar() {
             <motion.button 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="md:hidden text-on-surface-variant hover:text-primary transition-colors ml-2 flex items-center"
+              className={`md:hidden transition-colors ml-2 flex items-center ${textVariantClass} ${hoverColorClass}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <span className="material-symbols-outlined text-title-md">

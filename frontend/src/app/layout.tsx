@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-sans",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
-  title: "Cozy - Decorate your Life with Arts",
-  description: "Curated collection of modern and timeless furniture pieces.",
+  title: "LUXURY - Modern & Timeless Furniture",
+  description: "Curated collection of modern and timeless luxury furniture pieces.",
 };
 
 export default function RootLayout({
@@ -26,7 +32,8 @@ export default function RootLayout({
         <style>{`.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }`}</style>
       </head>
       <body
-        className={`${inter.className} bg-surface-container-low text-on-surface font-body-md antialiased overflow-x-hidden`}
+        suppressHydrationWarning={true}
+        className={`${inter.variable} ${playfair.variable} font-sans bg-surface text-on-surface antialiased overflow-x-hidden`}
       >
         {children}
       </body>
